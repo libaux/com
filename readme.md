@@ -1,0 +1,1 @@
+libaux for library auxiliary
