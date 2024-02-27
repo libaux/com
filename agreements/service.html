@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>用户服务协议</title>
+</head>
+
+<body>
+    <div id="content" style="font-size: 16px;">加载中...</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "get",
+                url: "./js/service.md",
+                dataType: "text",
+                success: function (res) {
+                    show(res)
+                }
+            })
+
+            function show(data) {
+                document.getElementById('content').innerHTML = marked.parse(data);
+            }
+        })
+    </script>
+</body>
+
+</html>
